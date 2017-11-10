@@ -16,6 +16,7 @@ public class EnclosuresTest {
     Enclosure<Elephant> elephantEnclosure;
     Enclosure<Giraffe> giraffeEnclosure;
     Lion lion;
+    Lion lion2;
     Giraffe giraffe;
     Elephant elephant;
 
@@ -26,6 +27,7 @@ public class EnclosuresTest {
         elephantEnclosure = new Enclosure();
         giraffeEnclosure = new Enclosure();
         lion = new Lion(750.50);
+        lion2 = new Lion(800.00);
     }
 
     @Test
@@ -47,6 +49,14 @@ public class EnclosuresTest {
         assertEquals(1, lionEnclosure.getSize());
         lionEnclosure.removeAnimal(lion);
         assertEquals(0, lionEnclosure.getSize());
+    }
+
+    @Test
+    public void canCalculateValue() {
+        lionEnclosure.addAnimal(lion);
+        lionEnclosure.addAnimal(lion2);
+        assertEquals(1550.50, lionEnclosure.calculateValue(), 0.01);
+
     }
 
 }
