@@ -56,7 +56,6 @@ public class EnclosuresTest {
         lionEnclosure.addAnimal(lion);
         lionEnclosure.addAnimal(lion2);
         assertEquals(1550.50, lionEnclosure.calculateValue(), 0.01);
-
     }
 
 }

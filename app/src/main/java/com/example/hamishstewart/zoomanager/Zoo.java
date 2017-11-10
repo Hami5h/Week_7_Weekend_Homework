@@ -21,6 +21,17 @@ public class Zoo {
         this.enclosures.remove(enclosure);
     }
 
+    public int getSize() {
+        return this.enclosures.size();
+    }
+
+    public int totalNumberOfAnimals() {
+        int total = 0;
+        for (Enclosure enclosure : enclosures) {
+            total += enclosure.getSize();
+        }
+        return total;
+    }
 
 
 }
