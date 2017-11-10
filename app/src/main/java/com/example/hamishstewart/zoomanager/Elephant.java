@@ -5,7 +5,7 @@ package com.example.hamishstewart.zoomanager;
  */
 
 public class Elephant extends Animal{
-    private double value;
+
 
     public Elephant(double value) {
         super(value);
