@@ -15,12 +15,17 @@ public class EnclosuresTest {
     Enclosure<Lion> lionEnclosure;
     Enclosure<Elephant> elephantEnclosure;
     Enclosure<Giraffe> giraffeEnclosure;
+    Lion lion;
+    Giraffe giraffe;
+    Elephant elephant;
+
 
     @Before
     public void before() {
         lionEnclosure = new Enclosure();
         elephantEnclosure = new Enclosure();
         giraffeEnclosure = new Enclosure();
+        lion = new Lion(750.50);
     }
 
     @Test
@@ -28,6 +33,20 @@ public class EnclosuresTest {
         assertEquals(0, lionEnclosure.getSize());
         assertEquals(0, elephantEnclosure.getSize());
         assertEquals(0, giraffeEnclosure.getSize());
+    }
+
+    @Test
+    public void canAddAnimal() {
+        lionEnclosure.addAnimal(lion);
+        assertEquals(1, lionEnclosure.getSize());
+    }
+
+    @Test
+    public void canRemoveAnimal() {
+        lionEnclosure.addAnimal(lion);
+        assertEquals(1, lionEnclosure.getSize());
+        lionEnclosure.removeAnimal(lion);
+        assertEquals(0, lionEnclosure.getSize());
     }
 
 }
